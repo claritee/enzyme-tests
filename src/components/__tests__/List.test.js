@@ -1,27 +1,27 @@
-import { shallow } from '../../enzyme';
+import { mount } from '../../enzyme';
 
 import List from '../List';
 
 describe('List tests', () => {
   it('renders list-items', () => {
     const items = ['one', 'two', 'three'];
-    const wrapper = shallow(<List items={items} />);
+    const wrapper = mount(<List items={items} />);
 
     console.log(wrapper.debug());
 
     // Expect the wrapper object to be defined
-    // Before ListItem
-    // expect(wrapper.find('.list-items')).toBeDefined();
-    // expect(wrapper.find('.item')).toHaveLength(items.length);
+    // (1) Before ListItem using shallow and (2) using mount
+    expect(wrapper.find('.list-items')).toBeDefined();
+    expect(wrapper.find('.item')).toHaveLength(items.length);
 
-    // After ListItem
-    expect(wrapper.find('ListItem')).toBeDefined();
-    expect(wrapper.find('ListItem')).toHaveLength(items.length);
+    // After ListItem using shallow
+    // expect(wrapper.find('ListItem')).toBeDefined();
+    // expect(wrapper.find('ListItem')).toHaveLength(items.length);
   });
 
   it('renders a list item', () => {
     const items = ['Thor', 'Loki'];
-    const wrapper = shallow(<List items={items} />);
+    const wrapper = mount(<List items={items} />);
 
     // Check if an element in the Component exists
     expect(wrapper.contains(<li key='Thor' className="item">Thor</li >)).toBeTruthy();
@@ -29,7 +29,7 @@ describe('List tests', () => {
 
   it('renders correct text in item', () => {
     const items = ['John', 'James', 'Luke'];
-    const wrapper = shallow(<List items={items} />);
+    const wrapper = mount(<List items={items} />);
 
     //Expect the child of the first item to be an array
     expect(wrapper.find('.item').get(0).props.children).toEqual('John');
