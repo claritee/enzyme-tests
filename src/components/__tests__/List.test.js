@@ -1,4 +1,5 @@
 import { render } from '../../enzyme';
+import renderer from 'react-test-renderer';
 
 import List from '../List';
 import { wrap } from 'module';
@@ -40,5 +41,14 @@ describe('List tests', () => {
 
     // After: static rendering 
     expect(wrapper.find('.item').get(0).children[0].data).toEqual('John');
+  });
+
+  it('renders correctly', () => {
+    const items = ['A', 'B', 'C'];
+
+    const tree = renderer
+      .create(<List items={items} />)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
   });
 });

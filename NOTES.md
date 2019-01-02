@@ -43,3 +43,20 @@ If we want to test the entire tree of a component
 https://airbnb.io/enzyme/docs/api/render.html
 
 Static HTML is returned instead of an instance of what is rendered
+
+## Snapshot Testing with Jest
+
+* https://jestjs.io/docs/en/snapshot-testing
+* https://egghead.io/lessons/javascript-use-jest-s-snapshot-testing-feature?pl=testing-javascript-with-jest-a36c4074
+
+Updating a snapshot
+
+```
+jest --updateSnapshot
+```
+
+Writing back to source (of the test)
+
+```
+.toMatchInlineSnapshot()
+```
