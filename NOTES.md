@@ -2,6 +2,11 @@
 
 Tutorial: https://scotch.io/tutorials/testing-react-components-with-enzyme-and-jest
 
+
+Jest: https://jestjs.io/docs/en/getting-started.html
+
+Enzyme: https://airbnb.io/enzyme/
+
 ## Enzyme
 
 ### Shallow 
