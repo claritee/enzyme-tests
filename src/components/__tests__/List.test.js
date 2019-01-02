@@ -7,9 +7,16 @@ describe('List tests', () => {
     const items = ['one', 'two', 'three'];
     const wrapper = shallow(<List items={items} />);
 
+    console.log(wrapper.debug());
+
     // Expect the wrapper object to be defined
-    expect(wrapper.find('.list-items')).toBeDefined();
-    expect(wrapper.find('.item')).toHaveLength(items.length);
+    // Before ListItem
+    // expect(wrapper.find('.list-items')).toBeDefined();
+    // expect(wrapper.find('.item')).toHaveLength(items.length);
+
+    // After ListItem
+    expect(wrapper.find('ListItem')).toBeDefined();
+    expect(wrapper.find('ListItem')).toHaveLength(items.length);
   });
 
   it('renders a list item', () => {

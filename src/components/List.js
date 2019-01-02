@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import { render } from 'react-dom'
 
+import ListItem from './ListItem';
+
 window.React = React //https://stackoverflow.com/questions/32070303/uncaught-referenceerror-react-is-not-defined?rq=1
 
 /*
@@ -18,7 +20,7 @@ function List(props) {
 
   return (
     <ul className="list-items">
-      {items.map(item => <li key={item} className="item">{item}</li>)}
+      {items.map(item => <ListItem key={item} item={item} />)}
     </ul>
   );
 }
